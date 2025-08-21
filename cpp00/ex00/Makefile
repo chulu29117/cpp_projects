@@ -6,7 +6,7 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/18 15:58:20 by clu               #+#    #+#              #
-#    Updated: 2025/08/18 16:22:01 by clu              ###   ########.fr        #
+#    Updated: 2025/08/21 16:39:11 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ $NAME: $(SRCS)
 	@c++ $(CFLAGS) $(STD) -o $(NAME) $(SRCS)
 
 clean:
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 
-.PHONY: all clean
+re: clean all
+
+.PHONY: all clean re
