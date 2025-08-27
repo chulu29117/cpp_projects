@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:00:05 by clu               #+#    #+#             */
-/*   Updated: 2025/08/27 17:14:40 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/27 17:29:55 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static bool getlineSafe(const std::string &prompt, std::string &out)
 	std::cout << prompt;
 	if (!std::getline(std::cin, out))
 	{
-		return (false); // EOF or error
+		return (false);
 	}
 	out = trim(out);
 	return (true);
@@ -104,7 +104,7 @@ static void doSearch(PhoneBook &book)
 	book.listContacts();
 
 	std::string idxStr;
-	std::cout << "Enter index to view details (1-8), or press ENTER to cancel: ";
+	std::cout << "Enter index (1-" << book.getCount() << "), or ENTER to cancel: ";
 	if (!std::getline(std::cin, idxStr))
 		return;
 
@@ -129,7 +129,7 @@ static void doSearch(PhoneBook &book)
 	}
 
 	idx -= 1;
-	if (book.getCount() < idx)
+	if (idx >= book.getCount())
 	{
 		std::cout << "No contact stored at this index yet.\n\n";
 		return;

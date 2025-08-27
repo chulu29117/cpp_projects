@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 14:23:53 by clu               #+#    #+#             */
-/*   Updated: 2025/08/19 16:12:32 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/27 17:34:09 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <iostream>
+#include <iomanip>
 
 class PhoneBook{
 private:

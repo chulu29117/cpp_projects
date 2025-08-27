@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 14:23:22 by clu               #+#    #+#             */
-/*   Updated: 2025/08/27 17:13:33 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/27 17:54:31 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ static std::string trim10(const std::string &s)
 }
 
 // Constructor
-PhoneBook::PhoneBook() : count(0), oldest(0) // member initializer list
-{
-	// std::cout << "Phonebook constructer called!" << std::endl;
-}
+PhoneBook::PhoneBook() : count(0), oldest(0) {}
 
 void PhoneBook::addContact(const Contact& contact)
 {

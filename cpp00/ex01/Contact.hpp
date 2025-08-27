@@ -6,16 +6,14 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:21:20 by clu               #+#    #+#             */
-/*   Updated: 2025/08/27 15:54:48 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/27 17:44:50 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <iostream>
-#include <cstring>
-#include <iomanip>
+#include <string>
 
 // Define the Contact class
 class Contact{

@@ -6,17 +6,14 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:21:13 by clu               #+#    #+#             */
-/*   Updated: 2025/08/27 16:10:29 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/27 17:54:38 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 // Default constructor
-Contact::Contact()
-{
-	// std::cout << "Contact constructer called!" << std::endl;
-}
+Contact::Contact() {}
 
 // Setters
 void Contact::setFirstName(const std::string &firstName)
