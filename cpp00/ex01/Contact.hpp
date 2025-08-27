@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:21:20 by clu               #+#    #+#             */
-/*   Updated: 2025/08/19 16:11:21 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/27 15:54:48 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Contact{
 // Private member variables
 private:
-	std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
+	std::string firstName, lastName, Nickname, phoneNumber, darkestSecret;
 
 // Public member functions
 // Functions declared here can be accessed from outside the class
@@ -30,7 +30,7 @@ public:
 	// Setters: functions to set the values of the member variables
 	void setFirstName(const std::string &firstName);
 	void setLastName(const std::string &lastName);
-	void setNickname(const std::string &nickname);
+	void setNickname(const std::string &Nickname);
 	void setPhoneNumber(const std::string &phoneNumber);
 	void setDarkestSecret(const std::string &darkestSecret);
 
