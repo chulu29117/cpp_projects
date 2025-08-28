@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 14:23:22 by clu               #+#    #+#             */
-/*   Updated: 2025/08/27 17:54:31 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/28 14:38:27 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static std::string trim10(const std::string &s)
 // Constructor
 PhoneBook::PhoneBook() : count(0), oldest(0) {}
 
-void PhoneBook::addContact(const Contact& contact)
+void PhoneBook::addContact(const Contact &contact)
 {
 	if (!contact.isComplete())
 	{
 		std::cout << "Contact not saved: all fields must be non-empty.\n";
 		return;
-	} 
+	}
 
 	int index;
 	index = (count <= 8) ? count : oldest;
@@ -41,7 +41,7 @@ void PhoneBook::addContact(const Contact& contact)
 	contacts[index] = contact;
 
 	std::cout << "Contact saved at index " << index + 1
-			<< (count == 9 ? " (overwrote oldest)\n" : "\n");
+			  << (count == 9 ? " (overwrote oldest)\n" : "\n");
 }
 
 void PhoneBook::listContacts() const
@@ -73,7 +73,7 @@ void PhoneBook::showContacts(int index) const
 	if (index < 0 || index >= count)
 	{
 		std::cout << "Invalid index.\n";
-		return ;
+		return;
 	}
 
 	const Contact &c = contacts[index];

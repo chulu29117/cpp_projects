@@ -6,7 +6,7 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 14:23:07 by clu               #+#    #+#              #
-#    Updated: 2025/08/27 17:19:50 by clu              ###   ########.fr        #
+#    Updated: 2025/08/28 15:41:55 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,10 @@ CFLAGS 	= -Wall -Wextra -Werror ${STD}
 
 SRCS = 	PhoneBook.cpp \
 		Contact.cpp \
-		main.cpp \
+		main.cpp
 
-HEADERS = 	PhoneBook.hpp \
-			Contact.hpp
+HEADERS = PhoneBook.hpp \
+		  Contact.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

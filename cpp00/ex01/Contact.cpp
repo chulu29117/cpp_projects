@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:21:13 by clu               #+#    #+#             */
-/*   Updated: 2025/08/27 17:54:38 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/28 14:38:33 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ const std::string &Contact::getDarkestSecret() const
 }
 
 // Helper: all fields must not be empty
-bool Contact::isComplete() const
+bool Contact::isComplete(void) const
 {
 	return (!this->firstName.empty()
 		 && !this->firstName.empty()
