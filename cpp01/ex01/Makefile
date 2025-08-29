@@ -5,33 +5,39 @@
 #                                                     +:+ +:+         +:+      #
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/18 15:58:20 by clu               #+#    #+#              #
-#    Updated: 2025/08/28 17:32:05 by clu              ###   ########.fr        #
+#    Created: 2025/08/29 16:07:31 by clu               #+#    #+#              #
+#    Updated: 2025/08/29 16:15:48 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = Zombie
 
-CFLAGS = -Wall -Wextra -Werror
+CC 		= g++
+STD 	= -std=c++11
+CFLAGS 	= -Wall -Wextra -Werror ${STD}
 
-STD = -std=C++11
+SRCS = 	Zombie.cpp \
+		zombieHorde.cpp \
+		main.cpp
 
-SRCS = megaphone.cpp
+HEADERS = Zombie.hpp
+
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$NAME: $(SRCS)
-	@c++ $(CFLAGS) $(STD) -o $(NAME) $(SRCS)
+$(NAME): $(OBJS) $(HEADERS)
+	$(CC) $(CFLAGS) $(STD) -o $(NAME) $(OBJS)
+
+%.o: %.cpp $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(NAME)
-	@echo "Cleaned!"
+	@rm -f $(OBJS)
 
 fclean: clean
-	@rm -rf $(NAME)
-	@echo "All cleaned!"
+	@rm -f $(NAME)
 
-re: clean all
-	@echo "Rebuilt!"
+re: fclean all	
 
 .PHONY: all clean fclean re

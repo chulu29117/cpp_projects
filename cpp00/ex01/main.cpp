@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 16:00:05 by clu               #+#    #+#             */
-/*   Updated: 2025/08/27 17:29:55 by clu              ###   ########.fr       */
+/*   Updated: 2025/08/29 15:57:44 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static void doAdd(PhoneBook &book)
 	if (!readNonEmptyLine("Darkest secret: ", secret))
 		return;
 
-	Contact c; // Create a Contact object
+	Contact c;
 	c.setFirstName(first);
 	c.setLastName(last);
 	c.setNickname(nick);
@@ -151,10 +151,7 @@ int main()
 	{
 		std::cout << "> ";
 		if (!std::getline(std::cin, cmd))
-		{
-			std::cout << "\nEOF detected. Exiting.\n";
 			break;
-		}
 		cmd = trim(cmd);
 		for (size_t i = 0; i < cmd.size(); ++i)
 			cmd[i] = static_cast<char>(std::toupper(static_cast<unsigned char>(cmd[i])));
