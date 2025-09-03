@@ -5,23 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/29 15:27:52 by clu               #+#    #+#              #
-#    Updated: 2025/09/03 11:04:58 by clu              ###   ########.fr        #
+#    Created: 2025/08/29 16:07:31 by clu               #+#    #+#              #
+#    Updated: 2025/09/03 14:59:41 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = harlFilter
 
 CC 		= g++
 STD 	= -std=c++11
 CFLAGS 	= -Wall -Wextra -Werror ${STD}
 
-SRCS = 	Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
-		main.cpp
+SRCS = 	main.cpp \
+		Harl.cpp
 
-HEADERS = Zombie.hpp
+HEADERS = Harl.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

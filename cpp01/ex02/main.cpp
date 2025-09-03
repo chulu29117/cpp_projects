@@ -5,28 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 15:28:09 by clu               #+#    #+#             */
-/*   Updated: 2025/09/02 15:46:50 by clu              ###   ########.fr       */
+/*   Created: 2025/09/02 15:54:22 by clu               #+#    #+#             */
+/*   Updated: 2025/09/02 16:23:17 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 #include <iostream>
+#include <string>
 
 int main(void)
 {
-	int N = 10;
+	std::string str = "HI THIS IS BRAIN";
+	std::string* stringPTR = &str;
+	std::string& stringREF = str;
 
-	Zombie* horde = zombieHorde(N, "HordeZombie");
-	if (horde)
-	{
-		for (int i = 0; i < N; i++)
-			horde[i].announce();
-		delete[] horde;
-	}
-	else
-	{
-		std::cout << "Failed to create zombie horde." << std::endl;
-	}
-	return (0);
+	std::cout << "Address of str: " << &str << std::endl;
+	std::cout << "Address held by stringPTR: " << stringPTR << std::endl;
+	std::cout << "Address held by stringREF: " << &stringREF << std::endl;
+
+	std::cout << "Value of str: " << str << std::endl;
+	std::cout << "Value pointed to by stringPTR: " << *stringPTR << std::endl;
+	std::cout << "Value pointed to by stringREF: " << stringREF << std::endl;
 }
