@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 16:39:01 by clu               #+#    #+#             */
-/*   Updated: 2025/09/04 16:32:04 by clu              ###   ########.fr       */
+/*   Updated: 2025/09/04 16:57:37 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <iostream>
 #include <cmath>
 
+///////////////////////////////////////////////////////////////////////
+// Constructors, copy constructor, copy assignment operator, destructor
 Fixed::Fixed() : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -29,7 +31,7 @@ Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-		this->_value = other.getRawBits();
+		_value = other.getValue();
 	return (*this);
 }
 
@@ -38,13 +40,42 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits() const
+Fixed::Fixed(const int intValue)
 {
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_value);
+	std::cout << "Int constructor called" << std::endl;
+	_value = intValue << _fractionalBits;
 }
 
-void Fixed::setRawBits(int const raw)
+Fixed::Fixed(const float floatValue)
 {
-	this->_value = raw;
+	std::cout << "Float constructor called" << std::endl;
+	_value = roundf(floatValue * (1 << _fractionalBits));
+}
+
+///////////////////////////////////////////////////////////////////////
+// Member functions
+float Fixed::toFloat() const
+{
+	return ((float)_value / (1 << _fractionalBits));
+}
+
+int Fixed::toInt() const
+{
+	return (_value >> _fractionalBits);
+}
+
+int Fixed::getValue() const
+{
+	return (_value);
+}
+
+void Fixed::setvalue(int const raw)
+{
+	_value = raw;
+}
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
+{
+	out << fixed.toFloat();
+	return (out);
 }

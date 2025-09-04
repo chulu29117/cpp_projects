@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 16:38:54 by clu               #+#    #+#             */
-/*   Updated: 2025/09/03 16:44:23 by clu              ###   ########.fr       */
+/*   Updated: 2025/09/04 16:31:51 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 class Fixed
 {
 	private:
-		int					rawBits;
-		static const int	fractionalBits = 8;
+		int					_value;
+		static const int	_fractionalBits = 8;
 	
 	public:
 		Fixed();
