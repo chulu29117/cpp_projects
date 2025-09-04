@@ -6,13 +6,13 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/29 15:27:52 by clu               #+#    #+#              #
-#    Updated: 2025/09/03 11:04:58 by clu              ###   ########.fr        #
+#    Updated: 2025/09/03 15:29:36 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Zombie
 
-CC 		= g++
+CC 		= c++
 STD 	= -std=c++11
 CFLAGS 	= -Wall -Wextra -Werror ${STD}
 

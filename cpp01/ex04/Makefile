@@ -6,13 +6,13 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/29 16:07:31 by clu               #+#    #+#              #
-#    Updated: 2025/09/03 11:21:24 by clu              ###   ########.fr        #
+#    Updated: 2025/09/03 15:29:56 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Replace
 
-CC 		= g++
+CC 		= c++
 STD 	= -std=c++11
 CFLAGS 	= -Wall -Wextra -Werror ${STD}
 

@@ -6,13 +6,13 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/19 14:23:07 by clu               #+#    #+#              #
-#    Updated: 2025/08/28 15:41:55 by clu              ###   ########.fr        #
+#    Updated: 2025/09/03 15:25:21 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
-CC 		= g++
+CC 		= c++
 STD 	= -std=c++11
 CFLAGS 	= -Wall -Wextra -Werror ${STD}
 
@@ -35,9 +35,11 @@ $(NAME): $(OBJS) $(HEADERS)
 
 clean:
 	@rm -f $(OBJS)
+	@echo "Object files cleaned!"
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "All cleaned!"
 
 re: fclean all	
 

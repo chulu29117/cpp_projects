@@ -6,22 +6,25 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/18 15:58:20 by clu               #+#    #+#              #
-#    Updated: 2025/08/28 17:32:05 by clu              ###   ########.fr        #
+#    Updated: 2025/09/03 15:28:53 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CFLAGS = -Wall -Wextra -Werror
-
-STD = -std=C++11
+CC 		= c++
+STD 	= -std=c++11
+CFLAGS 	= -Wall -Wextra -Werror ${STD}
 
 SRCS = megaphone.cpp
 
 all: $(NAME)
 
-$NAME: $(SRCS)
-	@c++ $(CFLAGS) $(STD) -o $(NAME) $(SRCS)
+$(NAME): $(SRCS)
+	$(CC) $(CFLAGS) $(STD) -o $(NAME) $(SRCS)
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(NAME)

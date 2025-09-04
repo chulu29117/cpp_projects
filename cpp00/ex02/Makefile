@@ -6,13 +6,13 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/28 15:37:23 by clu               #+#    #+#              #
-#    Updated: 2025/08/28 15:43:00 by clu              ###   ########.fr        #
+#    Updated: 2025/09/03 15:29:23 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Account
 
-CC 		= g++
+CC 		= c++
 STD 	= -std=c++11
 CFLAGS 	= -Wall -Wextra -Werror ${STD}
 
@@ -33,9 +33,11 @@ $(NAME): $(OBJS) $(HEADERS)
 
 clean:
 	@rm -f $(OBJS)
+	@echo "Objects removed"
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "Everything removed"
 
 re: fclean all	
 

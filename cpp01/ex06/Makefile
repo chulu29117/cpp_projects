@@ -6,20 +6,20 @@
 #    By: clu <clu@student.hive.fi>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/29 16:07:31 by clu               #+#    #+#              #
-#    Updated: 2025/09/03 14:59:41 by clu              ###   ########.fr        #
+#    Updated: 2025/09/03 16:30:07 by clu              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = harlFilter
 
-CC 		= g++
-STD 	= -std=c++11
+CC 		= c++
+STD 	= -std=c++20
 CFLAGS 	= -Wall -Wextra -Werror ${STD}
 
 SRCS = 	main.cpp \
-		Harl.cpp
+		harlFilter.cpp
 
-HEADERS = Harl.hpp
+HEADERS = harlFilter.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
