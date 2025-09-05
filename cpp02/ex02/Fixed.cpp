@@ -6,7 +6,7 @@
 /*   By: clu <clu@student.hive.fi>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 16:39:01 by clu               #+#    #+#             */
-/*   Updated: 2025/09/04 16:57:37 by clu              ###   ########.fr       */
+/*   Updated: 2025/09/05 17:21:03 by clu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,3 +79,105 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 	out << fixed.toFloat();
 	return (out);
 }
+
+
+///////////////////////////////////////////////////////////////////////
+// Ex02 member functions
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	return (a < b ? a : b);
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	return (a < b ? a : b);
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	return (a > b ? a : b);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	return (a > b ? a : b);
+}
+
+///////////////////////////////////////////////////////////////////////
+// Ex02 operator overloads
+bool Fixed::operator>(const Fixed& other) const
+{
+	return (_value > other._value);
+}
+
+bool Fixed::operator<(const Fixed& other) const
+{
+	return (_value < other._value);
+}
+
+bool Fixed::operator>=(const Fixed& other) const
+{
+	return (_value >= other._value);
+}
+
+bool Fixed::operator<=(const Fixed& other) const
+{
+	return (_value <= other._value);
+}
+
+bool Fixed::operator==(const Fixed& other) const
+{
+	return (_value == other._value);
+}
+
+bool Fixed::operator!=(const Fixed& other) const
+{
+	return (_value != other._value);
+}
+
+Fixed Fixed::operator+(const Fixed& other) const
+{
+	return (Fixed(this->toFloat() + other.toFloat()));
+}
+
+Fixed Fixed::operator-(const Fixed& other) const
+{
+	return (Fixed(this->toFloat() - other.toFloat()));
+}
+
+Fixed Fixed::operator*(const Fixed& other) const
+{
+	return (Fixed(this->toFloat() * other.toFloat()));
+}
+
+Fixed Fixed::operator/(const Fixed& other) const
+{
+	return (Fixed(this->toFloat() / other.toFloat()));
+}
+
+Fixed& Fixed::operator++(void)
+{
+	_value++;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp(*this);
+	_value++;
+	return (temp);
+}
+
+Fixed& Fixed::operator--(void)
+{
+	_value--;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+	_value--;
+	return (temp);
+}
+
